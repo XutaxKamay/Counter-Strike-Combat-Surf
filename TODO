@@ -1,0 +1,2 @@
+Linux:
+	- fix nav_mesh.cpp : crashes when loads a custom server
