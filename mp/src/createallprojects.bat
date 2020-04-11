@@ -1,1 +1,1 @@
-devtools\bin\vpc.exe /hl2mp +everything /mksln everything.sln
+devtools\bin\vpc.exe /cstrike +everything /mksln everything.sln /2013 /defines:VS2019
