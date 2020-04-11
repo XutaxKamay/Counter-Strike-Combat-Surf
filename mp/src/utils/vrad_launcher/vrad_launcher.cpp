@@ -8,7 +8,7 @@
 // vrad_launcher.cpp : Defines the entry point for the console application.
 //
 
-#include "StdAfx.h"
+#include "stdafx.h"
 #include <direct.h>
 #include "tier1/strtools.h"
 #include "tier0/icommandline.h"

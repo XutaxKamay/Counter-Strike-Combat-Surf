@@ -52,7 +52,7 @@ static int g_whichMenu = 0;
 // to require a round-trip causing latency and unreliability in 
 // menu responses.  Only 1 message is sent to the server now which
 // includes both the menu name and the selected item.  The server
-// is never informed that the Menu.has been displayed.
+// is never informed that the menu has been displayed.
 //
 //--------------------------------------------------------------
 //

@@ -2,7 +2,7 @@
 // QC_Eyes.cpp : Defines the class behaviors for the application.
 //
 
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "QC_Eyes.h"
 #include "QC_EyesDlg.h"
 

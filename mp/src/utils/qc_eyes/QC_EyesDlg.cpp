@@ -2,7 +2,7 @@
 // QC_EyesDlg.cpp : implementation file
 //
 
-#include "StdAfx.h"
+#include "stdafx.h"
 #include <math.h>
 #include "QC_Eyes.h"
 #include "QC_EyesDlg.h"

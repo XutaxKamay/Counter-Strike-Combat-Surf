@@ -11,10 +11,10 @@
 #include "mathlib/mathlib.h"
 #include "polylib.h"
 #include "worldsize.h"
-#include "Threads.h"
+#include "threads.h"
 #include "tier0/dbg.h"
 
-// doesn't seem to need to be here? -- in Threads.h
+// doesn't seem to need to be here? -- in threads.h
 //extern int numthreads;
 
 // counters are only bumped when running single threaded,

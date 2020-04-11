@@ -22,7 +22,7 @@
 #include "mathlib/mathlib.h"
 #include "bsplib.h"
 #include "polylib.h"
-#include "Threads.h"
+#include "threads.h"
 #include "builddisp.h"
 #include "VRAD_DispColl.h"
 #include "UtlMemory.h"

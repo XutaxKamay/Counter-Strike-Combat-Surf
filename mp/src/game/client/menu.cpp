@@ -8,7 +8,7 @@
 //
 // menu.cpp
 //
-// generic Menu.handler
+// generic menu handler
 //
 #include "cbase.h"
 #include "text_message.h"

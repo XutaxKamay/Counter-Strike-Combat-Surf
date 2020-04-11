@@ -14,7 +14,7 @@
 #include "mathlib/vector.h"
 #include "scriplib.h"
 #include "polylib.h"
-#include "Threads.h"
+#include "threads.h"
 #include "bsplib.h"
 #include "qfiles.h"
 #include "utilmatlib.h"

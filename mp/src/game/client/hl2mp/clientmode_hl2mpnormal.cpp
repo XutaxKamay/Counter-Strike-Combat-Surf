@@ -14,7 +14,7 @@
 #include <vgui/IPanel.h>
 #include <vgui/ISurface.h>
 #include <vgui_controls/AnimationController.h>
-#include "IInput.h"
+#include "iinput.h"
 #include "hl2mpclientscoreboard.h"
 #include "hl2mptextwindow.h"
 #include "ienginevgui.h"

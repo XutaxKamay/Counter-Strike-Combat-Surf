@@ -2181,15 +2181,6 @@ inline bool AlmostEqual( const Vector &a, const Vector &b, int maxUlps = 10)
 		AlmostEqual( a.z, b.z, maxUlps );
 }
 
-// Swap two of anything.
-template <class T>
-FORCEINLINE void swap( T& x , T& y )
-{
-    T temp = x;
-    x = y;
-    y = temp;
-}
-
 
 #endif	// MATH_BASE_H
 

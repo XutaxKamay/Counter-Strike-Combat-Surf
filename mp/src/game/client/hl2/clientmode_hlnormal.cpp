@@ -11,7 +11,7 @@
 #include <vgui/IPanel.h>
 #include <vgui/ISurface.h>
 #include <vgui_controls/AnimationController.h>
-#include "IInput.h"
+#include "iinput.h"
 #include "ienginevgui.h"
 
 // memdbgon must be the last include file in a .cpp file!!!

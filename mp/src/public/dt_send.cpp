@@ -373,9 +373,6 @@ SendProp SendPropFloat(
 	SendVarProxyFn varProxy
 	)
 {
-	// Kamay: Added noscales to remove compression and get proper values for the client.
-	flags = SPROP_NOSCALE;
-	
 	SendProp ret;
 
 	if ( varProxy == SendProxy_FloatToFloat )
@@ -426,9 +423,6 @@ SendProp SendPropVector(
 	SendVarProxyFn varProxy
 	)
 {
-	// Kamay: Added noscales to remove compression and get proper values for the client.
-	flags = SPROP_NOSCALE;
-
 	SendProp ret;
 
 	if(varProxy == SendProxy_VectorToVector)
@@ -465,9 +459,6 @@ SendProp SendPropVectorXY(
 	SendVarProxyFn varProxy
 	)
 {
-	// Kamay: Added noscales to remove compression and get proper values for the client.
-	flags = SPROP_NOSCALE;
-
 	SendProp ret;
 
 	if(varProxy == SendProxy_VectorXYToVectorXY)
@@ -540,9 +531,6 @@ SendProp SendPropAngle(
 	SendVarProxyFn varProxy
 	)
 {
-	// Kamay: Added noscales to remove compression and get proper values for the client.
-	flags = SPROP_NOSCALE;
-
 	SendProp ret;
 
 	if(varProxy == SendProxy_AngleToFloat)
@@ -576,9 +564,6 @@ SendProp SendPropQAngles(
 	SendVarProxyFn varProxy
 	)
 {
-	// Kamay: Added noscales to remove compression and get proper values for the client.
-	flags = SPROP_NOSCALE;
-
 	SendProp ret;
 
 	if(varProxy == SendProxy_AngleToFloat)

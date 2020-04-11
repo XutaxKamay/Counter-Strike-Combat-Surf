@@ -16,7 +16,7 @@
 #include <windows.h>
 #include "cmdlib.h"
 #define NO_THREAD_NAMES
-#include "Threads.h"
+#include "threads.h"
 #include "pacifier.h"
 
 #define	MAX_THREADS	16

@@ -9,12 +9,8 @@
 #include "shake.h"
 #include "voice_gamemgr.h"
 
-void RegisterHapticMessages();
-
 void RegisterUserMessages()
 {
-    RegisterHapticMessages();
-
 	usermessages->Register( "Geiger", 1 );		// geiger info data
 	usermessages->Register( "Train", 1 );		// train control data
 	usermessages->Register( "HudText", -1 );

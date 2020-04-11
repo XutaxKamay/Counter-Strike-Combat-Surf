@@ -1867,7 +1867,7 @@ void CCSPlayer::Reset()
 //-----------------------------------------------------------------------------
 void CCSPlayer::HintMessage( const char *pMessage, bool bDisplayIfDead, bool bOverrideClientSettings )
 {
-	if ( !bDisplayIfDead && !IsAlive() || !IsNetClient() || !m_pHintMessageQueue )
+	if ( (!bDisplayIfDead && !IsAlive()) || !IsNetClient() || !m_pHintMessageQueue )
 		return;
 
 	if ( bOverrideClientSettings || m_bShowHints )
@@ -5283,11 +5283,11 @@ void CCSPlayer::ParseAutoBuyString(const char *string, bool &boughtPrimary, bool
 	BuyResult_e overallResult = BUY_ALREADY_HAVE;
 
 	// loop through the string of commands, trying each one in turn.
-	while (*c != NULL)
+	while (*c != 0)
 	{
 		int i = 0;
 		// copy the next word into the command buffer.
-		while ((*c != NULL) && (*c != ' ') && (i < 32))
+		while ((*c != 0) && (*c != ' ') && (i < 32))
 		{
 			command[i] = *(c);
 			++c;
@@ -5455,7 +5455,7 @@ void CCSPlayer::PrioritizeAutoBuyString(char *autobuyString, const char *priorit
 
 	const char *priorityChar = priorityString;
 
-	while (*priorityChar != NULL)
+	while (*priorityChar != 0)
 	{
 		int i = 0;
 
@@ -5485,7 +5485,7 @@ void CCSPlayer::PrioritizeAutoBuyString(char *autobuyString, const char *priorit
 		char *autoBuyPosition = strstr(autobuyString, priorityToken);
 		if (autoBuyPosition != NULL)
 		{
-			while ((*autoBuyPosition != NULL) && (*autoBuyPosition != ' '))
+			while ((*autoBuyPosition != 0) && (*autoBuyPosition != ' '))
 			{
 				newString[newStringPos] = *autoBuyPosition;
 				*autoBuyPosition = ' ';
@@ -5499,7 +5499,7 @@ void CCSPlayer::PrioritizeAutoBuyString(char *autobuyString, const char *priorit
 
 	// now just copy anything left in the autobuyString to the new string in the order it's in already.
 	char *autobuyPosition = autobuyString;
-	while (*autobuyPosition != NULL)
+	while (*autobuyPosition != 0)
 	{
 		// skip spaces
 		while (*autobuyPosition == ' ')
@@ -5508,7 +5508,7 @@ void CCSPlayer::PrioritizeAutoBuyString(char *autobuyString, const char *priorit
 		}
 
 		// copy the token over to the new string.
-		while ((*autobuyPosition != NULL) && (*autobuyPosition != ' '))
+		while ((*autobuyPosition != 0) && (*autobuyPosition != ' '))
 		{
 			newString[newStringPos] = *autobuyPosition;
 			++newStringPos;

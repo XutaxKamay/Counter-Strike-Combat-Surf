@@ -164,11 +164,6 @@ public:
 
 	static void EndRound();
 
-    virtual bool IsConnectedUserInfoChangeAllowed( CBasePlayer *pPlayer )
-    {
-        return true;
-    }
-
 	virtual void PlayerKilled( CBasePlayer *pVictim, const CTakeDamageInfo &info );
 	virtual void Think();
 

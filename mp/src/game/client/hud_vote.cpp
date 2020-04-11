@@ -16,7 +16,7 @@
 #include "materialsystem/imaterialvar.h"
 #include "con_nprint.h"
 #include "hud_vote.h"
-#include "Menu.h"
+#include "menu.h"
 
 #include <vgui/IScheme.h>
 #include <vgui/ISurface.h>

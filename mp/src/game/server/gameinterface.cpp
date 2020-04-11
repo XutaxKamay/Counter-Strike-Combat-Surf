@@ -7,15 +7,6 @@
 //===========================================================================//
 
 #include "cbase.h"
-
-#ifdef TERROR
-#include "terror/TerrorNav.h"
-#endif
-
-#ifdef TF_DLL
-#include "tf/nav_mesh/tf_nav_mesh.h"
-#endif
-
 #include "gamestringpool.h"
 #include "mapentities_shared.h"
 #include "game.h"
@@ -110,7 +101,6 @@
 #include "player_vs_environment/tf_population_manager.h"
 #include "workshop/maps_workshop.h"
 
-
 extern ConVar tf_mm_trusted;
 extern ConVar tf_mm_servermode;
 #endif
@@ -139,7 +129,6 @@ extern ConVar tf_mm_servermode;
 #if defined( REPLAY_ENABLED )
 #include "replay/ireplaysystem.h"
 #endif
-
 
 extern IToolFrameworkServer *g_pToolFrameworkServer;
 extern IParticleSystemQuery *g_pParticleSystemQuery;
@@ -577,9 +566,6 @@ EXPOSE_SINGLE_INTERFACE_GLOBALVAR(CServerGameDLL, IServerGameDLL, INTERFACEVERSI
 // When bumping the version to this interface, check that our assumption is still valid and expose the older version in the same way
 COMPILE_TIME_ASSERT( INTERFACEVERSION_SERVERGAMEDLL_INT == 10 );
 
-
-
-
 bool CServerGameDLL::DLLInit( CreateInterfaceFn appSystemFactory, 
 		CreateInterfaceFn physicsFactory, CreateInterfaceFn fileSystemFactory, 
 		CGlobalVars *pGlobals)
@@ -750,9 +736,6 @@ bool CServerGameDLL::DLLInit( CreateInterfaceFn appSystemFactory,
 #ifndef _XBOX
 #ifdef USE_NAV_MESH
 	// create the Navigation Mesh interface
-#ifndef _WIN32
-	extern CNavMesh *NavMeshFactory( void );
-#endif
 	TheNavMesh = NavMeshFactory();
 #endif
 
@@ -850,6 +833,7 @@ float CServerGameDLL::GetTickInterval( void ) const
 // [Forrest] For Counter-Strike, set default tick rate of 66 and removed -tickrate command line parameter.
 //=============================================================================
 // Ignoring this for now, server ops are abusing it
+#if !defined( TF_DLL ) && !defined( CSTRIKE_DLL ) && !defined( DOD_DLL )
 //=============================================================================
 // HPE_END
 //=============================================================================
@@ -860,6 +844,7 @@ float CServerGameDLL::GetTickInterval( void ) const
 		if ( tickrate > 10 )
 			tickinterval = 1.0f / tickrate;
 	}
+#endif
 
 	return tickinterval;
 }

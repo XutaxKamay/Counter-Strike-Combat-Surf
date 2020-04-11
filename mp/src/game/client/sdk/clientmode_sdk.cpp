@@ -9,7 +9,7 @@
 #include "hud.h"
 #include "clientmode_sdk.h"
 #include "cdll_client_int.h"
-#include "IInput.h"
+#include "iinput.h"
 #include "vgui/ISurface.h"
 #include "vgui/IPanel.h"
 #include <vgui_controls/AnimationController.h>

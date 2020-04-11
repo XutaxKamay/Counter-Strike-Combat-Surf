@@ -69,8 +69,7 @@ CRagdollExplosionEnumerator::~CRagdollExplosionEnumerator()
 
 		// debugoverlay->AddLineOverlay( m_vecOrigin, position, 0,255,0, true, 18.0 );
 
-        // SURF_TODO: it should be never nullptr! because that means that the trace is failing when the actual model exist...
-		if ( (tr.fraction < 1.0f && tr.m_pEnt != pModel) || tr.m_pEnt == nullptr )
+		if ( tr.fraction < 1.0f && tr.m_pEnt != pModel )
 			continue;	
 
 		dir *= force; // scale force

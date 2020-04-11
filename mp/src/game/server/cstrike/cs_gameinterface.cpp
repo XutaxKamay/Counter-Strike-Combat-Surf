@@ -19,7 +19,7 @@ void CServerGameClients::GetPlayerLimits( int& minplayers, int& maxplayers, int 
 	minplayers = 1;  // allow single player for the test maps (but we default to multi)
 	maxplayers = MAX_PLAYERS;
 	
-	defaultMaxPlayers = MAX_PLAYERS;	// Default to 32 players unless they change it.
+	defaultMaxPlayers = 32;	// Default to 32 players unless they change it.
 }
 
 

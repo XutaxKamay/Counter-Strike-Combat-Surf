@@ -665,7 +665,7 @@ bool CCSBot::UpdateLadderMovement( void )
 			break;
 	}
 
-	if (cv_bot_traceview.GetInt() == 1 && IsLocalPlayerWatchingMe() || cv_bot_traceview.GetInt() == 10)
+	if ((cv_bot_traceview.GetInt() == 1 && IsLocalPlayerWatchingMe()) || cv_bot_traceview.GetInt() == 10)
 	{
 		DrawPath();
 	}
@@ -1321,7 +1321,7 @@ void CCSBot::FeelerReflexAdjustment( Vector *goalPosition )
 	}
 */
 
-	if (cv_bot_traceview.GetInt() == 1 && IsLocalPlayerWatchingMe() || cv_bot_traceview.GetInt() == 10)
+	if ((cv_bot_traceview.GetInt() == 1 && IsLocalPlayerWatchingMe()) || cv_bot_traceview.GetInt() == 10)
 	{
 		if (leftClear)
 			UTIL_DrawBeamPoints( from, to, 1, 0, 255, 0 );
@@ -1343,7 +1343,7 @@ void CCSBot::FeelerReflexAdjustment( Vector *goalPosition )
 	}
 */
 
-	if (cv_bot_traceview.GetInt() == 1 && IsLocalPlayerWatchingMe() || cv_bot_traceview.GetInt() == 10)
+	if ((cv_bot_traceview.GetInt() == 1 && IsLocalPlayerWatchingMe()) || cv_bot_traceview.GetInt() == 10)
 	{
 		if (rightClear)
 			UTIL_DrawBeamPoints( from, to, 1, 0, 255, 0 );
@@ -1673,7 +1673,7 @@ CCSBot::PathResult CCSBot::UpdatePathMovement( bool allowSpeedChange )
 	}
 
 	// draw debug visualization
-	if (cv_bot_traceview.GetInt() == 1 && IsLocalPlayerWatchingMe() || cv_bot_traceview.GetInt() == 10)
+	if ((cv_bot_traceview.GetInt() == 1 && IsLocalPlayerWatchingMe()) || cv_bot_traceview.GetInt() == 10)
 	{
 		DrawPath();
 

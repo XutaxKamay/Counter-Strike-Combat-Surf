@@ -11,7 +11,7 @@
 #include "vrad.h"
 #include "map_shared.h"
 #include "lightmap.h"
-#include "Threads.h"
+#include "threads.h"
 
 
 static CUtlVector<unsigned char> g_LastGoodLightData;

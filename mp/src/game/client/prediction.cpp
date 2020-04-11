@@ -693,6 +693,8 @@ void CPrediction::FinishMove( C_BasePlayer *player, CUserCmd *ucmd, CMoveData *m
 
 	player->m_RefEHandle = move->m_nPlayerHandle;
 
+	player->m_vecVelocity = move->m_vecVelocity;
+
 	player->m_vecNetworkOrigin = move->GetAbsOrigin();
 	
 	player->m_Local.m_nOldButtons = move->m_nButtons;
@@ -704,19 +706,6 @@ void CPrediction::FinishMove( C_BasePlayer *player, CUserCmd *ucmd, CMoveData *m
 	m_hLastGround = player->GetGroundEntity();
  
 	player->SetLocalOrigin( move->GetAbsOrigin() );
-	player->SetLocalVelocity( move->m_vecVelocity );
-
-	// Convert final pitch to body pitch
-	float pitch = move->m_vecAngles[ PITCH ];
-
-	if ( pitch > 180.0f )
-	{
-		pitch -= 360.0f;
-	}
-
-	pitch = clamp( pitch, -90.f, 90.f );
-
-	move->m_vecAngles[ PITCH ] = pitch;
 
 	IClientVehicle *pVehicle = player->GetVehicle();
 	if (pVehicle)
@@ -920,14 +909,9 @@ void CPrediction::RunCommand( C_BasePlayer *player, CUserCmd *ucmd, IMoveHelper 
 		pVehicle->ProcessMovement( player, g_pMoveData );
 	}
 
+    RunPostThink( player );
+
 	FinishMove( player, ucmd, g_pMoveData );
-
-	// Let client invoke any needed impact functions
-	VPROF_SCOPE_BEGIN( "moveHelper->ProcessImpacts" );
-	moveHelper->ProcessImpacts();
-	VPROF_SCOPE_END();
-
-	RunPostThink( player );
 
 	g_pGameMovement->FinishTrackPredictionErrors( player );
 

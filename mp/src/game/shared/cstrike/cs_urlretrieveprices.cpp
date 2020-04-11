@@ -4,7 +4,7 @@
 //
 //=============================================================================
 
-//#include "StdAfx.h"
+//#include "stdafx.h"
 #ifdef _WIN32
 #include "winlite.h"
 #include "winsock.h"

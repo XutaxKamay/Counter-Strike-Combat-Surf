@@ -6,7 +6,7 @@
 
 #include "cbase.h"
 #include "c_baseplayer.h"
-#include "Menu.h"
+#include "menu.h"
 #include "KeyValues.h"
 #include "multiplay_gamerules.h"
 

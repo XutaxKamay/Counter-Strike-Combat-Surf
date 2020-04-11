@@ -894,19 +894,19 @@ void CCSBot::DebugDisplay( void ) const
 	// show if blind
 	if (IsBlind())
 	{
-		NDebugOverlay::ScreenText( 0.5f, 0.38f, msg.sprintf( "<<< BLIND >>>", safeTime ), 255, 255, 255, 255, duration );
+		NDebugOverlay::ScreenText( 0.5f, 0.38f, msg.sprintf( "<<< BLIND %f >>>", safeTime ), 255, 255, 255, 255, duration );
 	}
 
 	// show if alert
 	if (IsAlert())
 	{
-		NDebugOverlay::ScreenText( 0.5f, 0.38f, msg.sprintf( "ALERT", safeTime ), 255, 0, 0, 255, duration );
+		NDebugOverlay::ScreenText( 0.5f, 0.38f, msg.sprintf( "ALERT %f", safeTime ), 255, 0, 0, 255, duration );
 	}
 
 	// show if panicked
 	if (IsPanicking())
 	{
-		NDebugOverlay::ScreenText( 0.5f, 0.36f, msg.sprintf( "PANIC", safeTime ), 255, 255, 0, 255, duration );
+		NDebugOverlay::ScreenText( 0.5f, 0.36f, msg.sprintf( "PANIC %f", safeTime ), 255, 255, 0, 255, duration );
 	}
 
 	// show behavior variables
