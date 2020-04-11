@@ -106,3 +106,8 @@ mp/game/cstrike/downloadlists
 *.project
 *.vscode*
 *.kdev4*
+lib/public/linux32/mathlib.a
+lib/public/linux32/raytrace.a
+lib/public/linux32/tier1.a
+lib/public/linux32/vgui_controls.a
+mp/src/compile_commands.json
